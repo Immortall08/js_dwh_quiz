@@ -1,56 +1,110 @@
 {
    "quizlist":[
       {
-         "q":"A s<a href=\"https://www.jqueryscript.net/tags.php?/map/\">map</a>le question?",
+         "question":"В какой папке должен находиться запускающий поток (ранка) для потока из DM_IRBA/ WF_DM_IRBA_DM_PD_APPLICATION?",
          "options":[
-            "Correct Answer 1",
-            "Answer 2",
-            "Answer 3",
-            "Answer 4"
-         ],
-         "correctIndex":1,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
-      },
-      {
-         "q":"A smaple question?",
-         "options":[
-            "Correct Answer 1",
-            "Answer 2"
-         ],
-         "correctIndex":1,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
-      },
-      {
-         "q":"A smaple question?",
-         "options":[
-            "Answer 1",
-            "Correct Answer 2",
-            "Answer 3",
-            "Answer 4"
+            "DM_IRBA",
+            "DM_FLOW_CONTROL",
+            "IRBA_FLOW_CONTROL"
          ],
          "correctIndex":2,
          "correctResponse":"Custom correct response.",
          "incorrectResponse":"Custom incorrect response."
       },
       {
-         "q":"A smaple question?",
+         "question":"Какая главное отличие наименование схемы в ODS для репликации через OGG от наименования схемы для репликации через Informatica?",
          "options":[
-            "Correct Answer 1",
-            "Answer 2"
+            "Разницы нет",
+            "При репликации через OGG наименование схемы начинается на RPL, а при репликации через Informatica - ETL."
+         ],
+         "correctIndex":2,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"Какое значение нужно указать в сессии на вкладке Properties атрибуту Commit Interval?",
+         "options":[
+            "1000",
+            "1000000000",
+            "Оставляем значение по умолчанию"
+         ],
+         "correctIndex":2,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"Как правильно нужно назвать представление по стандартам разработки?",
+         "options":[
+            "V_CTL_WORKFLOWS",
+            "CTL_WORKFLOWS_V",
+            "CTL_WORKFLOWS"
          ],
          "correctIndex":1,
          "correctResponse":"Custom correct response.",
          "incorrectResponse":"Custom incorrect response."
       },
       {
-         "q":"A smaple question?",
+         "question":"Выберите правильный формат наименования роли",
          "options":[
-            "Answer 1",
-            "Answer 2",
-            "Correct Answer 3",
-            "Answer 4"
+            "ROLE_SCHEMA",
+            "SCHEMA_ROLE",
+            "SELECT_SCHEMA_ROLE"
+         ],
+         "correctIndex":3,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"Какая в хранилище используется наибольшая дата?",
+         "options":[
+            "31.12.2022",
+            "31.12.9999",
+            "В хранилище нет данных с датой больше, чем текущий день",
+            "31.12.2999"
+         ],
+         "correctIndex":2,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"Можно ли сделать загрузку данных из ODS напрямую в таблицу DWH, при условии, что необходимо сформировать суррогатный ключ?",
+         "options":[
+            "Да, без проблем",
+            "Нет, нужно делать загрузку через промежуточную таблицу STG"
+         ],
+         "correctIndex":2,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"Можно ли запустить поток сразу за несколько периодов?",
+         "options":[
+            "Можно, необходимо включить настройку Merge",
+            "Нельзя, потоки необходимо пересчитывать только по одному периоду за раз",
+            "Можно, необходимо включить настройку Merge, если это не будет перечить логике загрузки"
+         ],
+         "correctIndex":3,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"В каких случаях нельзя включать обратный расчет интервалов при загрузке в таблицу?",
+         "options":[
+            "Всегда можно",
+            "Эту настройку включать нельзя",
+            "Если нужно сохранять историю изменения записей"
+         ],
+         "correctIndex":3,
+         "correctResponse":"Custom correct response.",
+         "incorrectResponse":"Custom incorrect response."
+      },
+      {
+         "question":"Чему будет равна дата загрузки $$LOAD_DT при запуске потока за период 01.12.2021 - 01.01.2022 (load_offset = -1)?",
+         "options":[
+            "01.12.2021",
+            "01.01.2022",
+            "31.12.2021",
+            "15.12.2021"
          ],
          "correctIndex":3,
          "correctResponse":"Custom correct response.",
