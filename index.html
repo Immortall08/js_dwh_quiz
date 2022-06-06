@@ -1,0 +1,126 @@
+<div id="quiz">
+  <div id="quiz-header">
+    <h1>Тестирование знаний стандартов разработки</h1>    
+  </div>  
+  <div id="questions">
+    <!--<div class="question-container active-question" style="display: block;">
+      <p class="question">A smaple question?</p>
+      <ul class="answers">
+        <li><a href="#" data-index="0" class="">Answer 1</a></li>
+        <li><a href="#" data-index="1" class="">Answer 2</a></li>
+        <li><a href="#" data-index="2">Answer 3</a></li>
+        <li><a href="#" data-index="3" class="">Answer 4</a></li>
+      </ul>
+    </div> -->
+  </div>
+  <div class="quiz-results" id="quiz-controls" style="display: block;">
+    <p id="quiz-response" style="display: none;">Custom correct response.</p>
+    <div id="quiz-buttons">
+      <a id="quiz-next-btn" style="display: none;">Next</a>
+      <a id="quiz-finish-btn" onclick="check_result();" style="display: inline-block;">Проверить</a>
+      <a id="quiz-restart-btn" style="display: none;">Заново</a>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>-->
+<script>
+	var questions;
+  var score = 0;
+  var questionCount = 5;
+  var minScore = Math.floor(questionCount * 0.7);
+  function check_result(){
+    var $answers = $('input:checked');
+    var $resultText = $('#quiz-response');
+    var $restartBtn = $('#quiz-restart-btn');
+    
+    score = 0;    
+    
+    $('li').removeClass( "correct incorrect" );
+    for(i=0;i<$answers.length;i++){
+			let questionId = $answers[i].getAttribute("questionid");
+      let answerId = $answers[i].getAttribute("id");
+      let correctIndex = questions[questionId-1].correctIndex;
+      //console.log(questionId + ', '+ answerId +', '+correctIndex);
+      
+      if (answerId == correctIndex){
+      	$($answers[i].closest("li")).addClass('correct');
+        score += 1;
+      } else {
+      	$($answers[i].closest("li")).addClass('incorrect');
+      }
+    }
+    if (score >= minScore){
+    	$resultText.text('Верных ответов ' + score + ' из ' + questionCount + '. Тест пройден успешно!')
+	  } else {
+      $resultText.text('Верных ответов ' + score + ' из ' + questionCount +  '. Повторите попытку!')
+    }
+    
+    $resultText.attr('style',"display: inline-block;");
+    $restartBtn.attr('style',"display: inline-block;");
+    
+  };
+  
+  
+  function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+        var temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+    }
+    return sourceArray;
+}
+
+</script>
+<script>
+  $(document).ready(function() {   
+
+    var optionList = [];
+    var $questions = $('div#questions');
+    var questionItems = [];
+
+		$("#quiz-restart-btn").click(function(){
+            location.reload(true);
+        });
+
+    $.getJSON('https://raw.githubusercontent.com/Immortall08/js_dwh_quiz/Immortall08-patch-1/data.json', function(data) {
+      //console.log(data);
+
+      questions = shuffle(data.quizlist);
+      //console.log(questions);
+      if (questionCount > questions.length ) {
+      	questionCount = questions.lengt;
+      }
+      for(i=0;i<questionCount;i++){
+			
+				questionItems = '<div class="question-container question" style="display: block;">'
+				+ '<p class="question">' + (i+1) + '. ' + questions[i].question + '</p>' + '<ul class="answers">';
+
+				//заполняем варианты ответов
+				for (j=0;j<questions[i].options.length;j++){
+					questionItems += '<li><input type="radio" name="question' + i + '" id="'+ (j+1) + '" questionId="' + (i+1) + '">' + questions[i].options[j] + '</li>'
+					//console.log(data.quizlist[i].options[j]);
+				}
+							
+				questionItems += '</ul>' + '</div>';
+
+				//console.log(data.quizlist[i].options.length);
+				//console.log(questionItems);
+        
+        $questions.append(questionItems);
+
+      }
+      
+      //console.log('Display');
+    });  
+
+
+
+  });
+
+</script>
