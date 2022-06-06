@@ -1,4 +1,4 @@
-<script>
+
 	var questions;
   var score = 0;
   var questionCount = 5;
@@ -46,5 +46,3 @@
     }
     return sourceArray;
 }
-
-</script>
