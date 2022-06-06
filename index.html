@@ -7,39 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-</head>
-<body>
-<div id="quiz">
-  <div id="quiz-header">
-    <h1>Тестирование знаний стандартов разработки</h1>    
-  </div>  
-  <div id="questions">
-    <!--<div class="question-container active-question" style="display: block;">
-      <p class="question">A smaple question?</p>
-      <ul class="answers">
-        <li><a href="#" data-index="0" class="">Answer 1</a></li>
-        <li><a href="#" data-index="1" class="">Answer 2</a></li>
-        <li><a href="#" data-index="2">Answer 3</a></li>
-        <li><a href="#" data-index="3" class="">Answer 4</a></li>
-      </ul>
-    </div> -->
-  </div>
-  <div class="quiz-results" id="quiz-controls" style="display: block;">
-    <p id="quiz-response" style="display: none;">Custom correct response.</p>
-    <div id="quiz-buttons">
-      <a id="quiz-next-btn" style="display: none;">Next</a>
-      <a id="quiz-finish-btn" onclick="check_result();" style="display: inline-block;">Проверить</a>
-      <a id="quiz-restart-btn" style="display: none;">Заново</a>
-    </div>
-  </div>
-</div>
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>-->
-<script type="text/javascript">
-	var questions;
+  
+  <script type="text/javascript">
+  var questions;
   var score = 0;
   var questionCount = 5;
   var minScore = Math.floor(questionCount * 0.7);
@@ -88,7 +58,8 @@
 }
 
 </script>
-<script type="text/javascript">
+	
+  <script type="text/javascript">
   $(document).ready(function() {   
 
     var optionList = [];
@@ -134,6 +105,37 @@
 
   });
   </script>
+</head>
+<body>
+<div id="quiz">
+  <div id="quiz-header">
+    <h1>Тестирование знаний стандартов разработки</h1>    
+  </div>  
+  <div id="questions">
+    <!--<div class="question-container active-question" style="display: block;">
+      <p class="question">A smaple question?</p>
+      <ul class="answers">
+        <li><a href="#" data-index="0" class="">Answer 1</a></li>
+        <li><a href="#" data-index="1" class="">Answer 2</a></li>
+        <li><a href="#" data-index="2">Answer 3</a></li>
+        <li><a href="#" data-index="3" class="">Answer 4</a></li>
+      </ul>
+    </div> -->
+  </div>
+  <div class="quiz-results" id="quiz-controls" style="display: block;">
+    <p id="quiz-response" style="display: none;">Custom correct response.</p>
+    <div id="quiz-buttons">
+      <a id="quiz-next-btn" style="display: none;">Next</a>
+      <a id="quiz-finish-btn" onclick="check_result();" style="display: inline-block;">Проверить</a>
+      <a id="quiz-restart-btn" style="display: none;">Заново</a>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>-->
 
 </body>
 </html>
