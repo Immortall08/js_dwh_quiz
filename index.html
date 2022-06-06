@@ -5,61 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-  
-  <script type="text/javascript">
-  var questions;
-  var score = 0;
-  var questionCount = 5;
-  var minScore = Math.floor(questionCount * 0.7);
-  function check_result(){
-    var $answers = $('input:checked');
-    var $resultText = $('#quiz-response');
-    var $restartBtn = $('#quiz-restart-btn');
-    
-    score = 0;    
-    
-    $('li').removeClass( "correct incorrect" );
-    for(i=0;i<$answers.length;i++){
-			let questionId = $answers[i].getAttribute("questionid");
-      let answerId = $answers[i].getAttribute("id");
-      let correctIndex = questions[questionId-1].correctIndex;
-      //console.log(questionId + ', '+ answerId +', '+correctIndex);
-      
-      if (answerId == correctIndex){
-      	$($answers[i].closest("li")).addClass('correct');
-        score += 1;
-      } else {
-      	$($answers[i].closest("li")).addClass('incorrect');
-      }
-    }
-    if (score >= minScore){
-    	$resultText.text('Верных ответов ' + score + ' из ' + questionCount + '. Тест пройден успешно!')
-	  } else {
-      $resultText.text('Верных ответов ' + score + ' из ' + questionCount +  '. Повторите попытку!')
-    }
-    
-    $resultText.attr('style',"display: inline-block;");
-    $restartBtn.attr('style',"display: inline-block;");
-    
-  };
-  
-  
-  function shuffle(sourceArray) {
-    for (var i = 0; i < sourceArray.length - 1; i++) {
-        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
-
-        var temp = sourceArray[j];
-        sourceArray[j] = sourceArray[i];
-        sourceArray[i] = temp;
-    }
-    return sourceArray;
-}
-
-</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>  
 	
-  <script type="text/javascript">
+  <script>
   $(document).ready(function() {   
 
     var optionList = [];
@@ -107,6 +56,8 @@
   </script>
 </head>
 <body>
+  <script src="script.js"></script>
+  	
 <div id="quiz">
   <div id="quiz-header">
     <h1>Тестирование знаний стандартов разработки</h1>    
