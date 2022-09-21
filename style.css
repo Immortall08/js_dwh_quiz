@@ -20,6 +20,12 @@
     font-size: 1.25em;
 }
 
+#quiz-progress p {
+    font-size: 1.5em;
+    font-weight:bold;
+
+}
+
 .answers {
     list-style: none;
     padding: 0;
@@ -31,6 +37,10 @@
     margin-bottom: 0.5em;
     background: #fff;
     border-radius: 10px;
+}
+
+.answers li:hover{
+    background: #dbd6d6;
 }
 
 .answers li.correct {
@@ -46,15 +56,18 @@
 }
 
 #quiz-controls {
-    --background: #333;
-    background: none;
-    color: #fff;
+    /*background: #333;
+    background: none;*/
+    /*color: #fff;*/
+    background: blanchedalmond;
     padding: 0.5em 1em;
     text-align: center;
     border-radius: 10px;
 }
 
-#quiz-response {}
+#quiz-response {
+    font-size: 1.5em;
+}
 #quiz-results {
     font-size: 1.25em;
 }
@@ -75,14 +88,14 @@
 /* Quiz State Overrides */
 
 .quiz-results #quiz-controls {
-    background: none;
     padding: 0;
+    background: darkgray;
 }
 .quiz-results #quiz-buttons a {
     background: #333;
     color: #fff;
 }
 .quiz-results p {
-    background: #fff;
+    background: none;
     color: #333;
 }
