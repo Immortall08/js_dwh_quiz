@@ -8,8 +8,8 @@
             "IRBA_FLOW_CONTROL"
          ],
          "correctIndex":2,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 1.",
+         "incorrectResponse":"Custom incorrect response 1."
       },
       {
          "question":"Какая главное отличие наименование схемы в ODS для репликации через OGG от наименования схемы для репликации через Informatica?",
@@ -18,8 +18,8 @@
             "При репликации через OGG наименование схемы начинается на RPL, а при репликации через Informatica - ETL."
          ],
          "correctIndex":2,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 2.",
+         "incorrectResponse":"Custom incorrect response 2."
       },
       {
          "question":"Какое значение нужно указать в сессии на вкладке Properties атрибуту Commit Interval?",
@@ -29,8 +29,8 @@
             "Оставляем значение по умолчанию"
          ],
          "correctIndex":2,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 3.",
+         "incorrectResponse":"Custom incorrect response 3."
       },
       {
          "question":"Как правильно нужно назвать представление по стандартам разработки?",
@@ -40,8 +40,8 @@
             "CTL_WORKFLOWS"
          ],
          "correctIndex":1,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 4.",
+         "incorrectResponse":"Custom incorrect response 4."
       },
       {
          "question":"Выберите правильный формат наименования роли",
@@ -51,8 +51,8 @@
             "SELECT_SCHEMA_ROLE"
          ],
          "correctIndex":3,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 5.",
+         "incorrectResponse":"Custom incorrect response 5."
       },
       {
          "question":"Какая в хранилище используется наибольшая дата?",
@@ -63,8 +63,8 @@
             "31.12.2999"
          ],
          "correctIndex":2,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 6.",
+         "incorrectResponse":"Custom incorrect response 6."
       },
       {
          "question":"Можно ли сделать загрузку данных из ODS напрямую в таблицу DWH, при условии, что необходимо сформировать суррогатный ключ?",
@@ -73,8 +73,8 @@
             "Нет, нужно делать загрузку через промежуточную таблицу STG"
          ],
          "correctIndex":2,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 7.",
+         "incorrectResponse":"Custom incorrect response 7."
       },
       {
          "question":"Можно ли запустить поток сразу за несколько периодов?",
@@ -84,8 +84,8 @@
             "Можно, необходимо включить настройку Merge, если это не будет перечить логике загрузки"
          ],
          "correctIndex":3,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 8.",
+         "incorrectResponse":"Custom incorrect response 8."
       },
       {
          "question":"В каких случаях нельзя включать обратный расчет интервалов при загрузке в таблицу?",
@@ -95,8 +95,8 @@
             "Если нужно сохранять историю изменения записей"
          ],
          "correctIndex":3,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 9.",
+         "incorrectResponse":"Custom incorrect response 9."
       },
       {
          "question":"Чему будет равна дата загрузки $$LOAD_DT при запуске потока за период 01.12.2021 - 01.01.2022 (load_offset = -1)?",
@@ -107,8 +107,8 @@
             "15.12.2021"
          ],
          "correctIndex":3,
-         "correctResponse":"Custom correct response.",
-         "incorrectResponse":"Custom incorrect response."
+         "correctResponse":"Custom correct response 10.",
+         "incorrectResponse":"Custom incorrect response 10."
       }
    ]
 }
