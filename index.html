@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+  <script>
+  $(document).ready(function() {   
+
+    var optionList = [];
+    var $questions = $('div#questions');
+    var questionItems = [];
+    var $progressText = $('#quiz-progress p'); 
+
+		$("#quiz-restart-btn").click(function(){
+        location.reload(true);
+    });
+
+    $.getJSON('https://raw.githubusercontent.com/Immortall08/js_dwh_quiz/Immortall08-patch-1/data.json', function(data) {
+      //console.log(data);
+
+      questions = shuffle(data.quizlist);
+      //console.log(questions);
+      if (questionCount > questions.length ) {
+      	questionCount = questions.lengt;
+      }
+      for(i=0;i<questionCount;i++){
+			
+				questionItems = '<div class="question-container question" style="display: none;">'
+				+ '<p class="question">' + questions[i].question + '</p>' + '<ul class="answers">';
+
+				//заполняем варианты ответов
+				for (j=0;j<questions[i].options.length;j++){
+					questionItems += '<li><p name="question' + i + '" id="'+ (j+1) + '" questionId="' + (i+1) + '">' + (j+1) + '. ' + questions[i].options[j] + '</p></li>'
+					//console.log(data.quizlist[i].options[j]);
+				}
+							
+				questionItems += '</ul>' + '</div>';
+
+				//console.log(data.quizlist[i].options.length);
+				//console.log(questionItems);
+        
+        $questions.append(questionItems);
+
+        //$('li').hover(function(){$(this).addClass("active")}, function(){$(this).removeClass("active")});
+        //$('li').click(function(){check_single_answer(this)});
+
+      }
+      $('li').click(function(){check_single_answer(this)});
+      $($('.question-container')[0]).css("display","block");
+
+      $progressText.text('Вопрос ' + (questionIndex+1) + ' из ' + questionCount);
+      
+      //console.log('Display');
+    }); 
+    
+    
+    
+    //$('li').hover(function(){$(this).css("background","#dbd6d6")}, function(){$(this).css("background", "none")});
+    
+    
+
+
+
+  });
+  </script>
+</head>
+<body>  
+<script src="script.js"></script>  	
+<div id="quiz">
+  <div id="quiz-header">
+    <h1>Тестирование знаний стандартов разработки</h1>    
+  </div>
+  <div id="quiz-progress">
+  <p class="progress"></p>
+  </div>
+   <div id="questions">
+    <!--<div class="question-container active-question" style="display: block;">
+      <p class="question">A smaple question?</p>
+      <ul class="answers">
+        <li><a href="#" data-index="0" class="">Answer 1</a></li>
+        <li><a href="#" data-index="1" class="">Answer 2</a></li>
+        <li><a href="#" data-index="2">Answer 3</a></li>
+        <li><a href="#" data-index="3" class="">Answer 4</a></li>
+      </ul>
+    </div> -->
+  </div>
+  <div class="quiz-results" id="quiz-controls" style="display: none;">
+    <p id="quiz-response" style="display: block;"></p>
+    <div id="quiz-buttons">
+      <a id="quiz-next-btn" style="display: inline-block;" onclick="next_question();">Далее</a>
+      <a id="quiz-finish-btn" onclick="check_result();" style="display: none;">Проверить</a>
+      <a id="quiz-restart-btn" style="display: none;">Заново</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>-->
+
+</body>
+</html>
